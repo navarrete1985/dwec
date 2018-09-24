@@ -37,20 +37,22 @@ function sumar(numero1, numero2){
 var usuario = (function(){
     var nombre = "un nombre";
     var apellidos = "apellidos"
+    
+    return{
+        mostrar: function(){
+            return nombre + apellidos;
+        },
 
-    var mostrar = function(){
-        return console.log(nombre + apellidos);
-    }
+        setNombre: function(nombre){
+            this.nombre = nombre;
+            return true;
+        },
 
-    var setNombre = function(nombre){
-        this.nombre = nombre;
-        return true;
-    }
-
-    var setApellidos = function(apellido){
-        this.apellidos = apellido;
-        return true;
-    }
+        setApellidos: function(apellido){
+            this.apellidos = apellido;
+            return true;
+        }
+    }    
 })();
 
 
