@@ -1,0 +1,11 @@
+div{
+    position: relative;
+    width: 100%;
+    top: 50%;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    color: cornflowerblue;
+}
