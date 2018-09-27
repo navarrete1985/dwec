@@ -7,6 +7,9 @@ console.log(numero);
 contador();
 //console.log(resultado2); //la variable resultado2 nos es visible puesto que está declarada en una función, y no tenemos visibilidad
 
+var element = document.getElementById("enviar");
+element.addEventListener("click", accion);
+
 function contador(){
     let resultado = 0;
     var resultado2 = 0;
@@ -34,12 +37,14 @@ function sumar(numero1, numero2){
     numero = resultado;
 }
 
+
+//Patrón módulo
 var usuario = (function(){
     var nombre = "un nombre";
     var apellidos = "apellidos"
     
     return{
-        mostrar: function(){
+        mostrar : function(){
             return nombre + apellidos;
         },
 
@@ -55,5 +60,16 @@ var usuario = (function(){
     }    
 })();
 
+function accion(){
+    let entrada = document.getElementById("name").value;
+    if (entrada != ""){
+        alert("Bienvenido " + entrada);
+    }else{
+        alert("Introduce tu nombre!");
+    }
+}
 
 console.log("El nombre del objeto es --> ", usuario.mostrar())
+usuario.setNombre("Nacho");
+usuario.setApellidos("Peña");
+console.log(usuario.mostrar());

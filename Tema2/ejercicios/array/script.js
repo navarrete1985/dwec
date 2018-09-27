@@ -1,4 +1,4 @@
-(function showTerm(){
+(function (){
     var tempByHour = new Array();
     tempByHour[0] = 59.2;
     tempByHour[1] = 60.1;

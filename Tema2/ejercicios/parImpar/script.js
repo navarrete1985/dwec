@@ -1,4 +1,4 @@
-(function calcular(){
+(function (){
     document.getElementById("calcular").addEventListener("click", (event)=>{
         let numero = document.getElementById("numero").value;
         if(numero == 0 || parseInt(numero)){

@@ -1,4 +1,4 @@
-(function comprobarCadena(){
+(function (){
     document.getElementById("comprobar").addEventListener("click", (event) => {
         let cadena = document.getElementById("cadena").value.trim().replace(' ', '');
         if(cadena.length == 0){

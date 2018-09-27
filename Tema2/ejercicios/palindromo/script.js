@@ -1,6 +1,6 @@
-(function palindromo(){
+(function (){
     document.getElementById('comprobar').addEventListener('click', (event) =>{
-        let entrada = document.getElementById('palabra').value.trim();
+        let entrada = document.getElementById('palabra').value.trim().replace(/\s/g, '');
         if(entrada.length <= 1){
             alert('Introduzca una cadena de más de 1 caracter');
             return;
