@@ -19,4 +19,4 @@
             alert('La palabra introducida no es un palíndromo');
         }
     })
-})()
+})();

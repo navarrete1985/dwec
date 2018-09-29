@@ -11,4 +11,4 @@
             alert("Formato de entrada inválido");
         }
     })
-})()
+})();

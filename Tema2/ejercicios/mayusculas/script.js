@@ -25,4 +25,4 @@
             alert("La cadena introducida no tiene ni minúsculas ni mayúsculas");
         }
     })
-})()
+})();

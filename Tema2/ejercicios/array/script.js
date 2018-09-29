@@ -13,4 +13,4 @@
             document.getElementById("temp" + i).textContent = "La temperatura a las " + i + " fué de " + tempByHour[i] + "ºF";
         }
     }
-})()
+})();
