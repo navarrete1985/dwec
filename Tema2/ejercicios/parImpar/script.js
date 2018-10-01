@@ -10,5 +10,5 @@
         }else{
             alert("Formato de entrada inválido");
         }
-    })
+    });
 })();
