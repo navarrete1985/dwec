@@ -4,35 +4,15 @@
     let btnDia = document.getElementById('btnDia').addEventListener('click', dia);
     let btnFinde = document.getElementById('btnFinde').addEventListener('click', esFinde);
 
+    let dias = "Domingo,Lunes,Martes,Miércoles,Jueves,Viernes,Sábado".split(",");
+
     function dia(){
         let dia = new Date().getDay();
-        let diaString = '';
-        switch(dia){
-            case 0:
-                diaString = 'Domingo';
-                break;
-            case 1:
-                diaString = 'Lunes';
-                break;
-            case 2:
-                diaString = 'Martes';
-                break;
-            case 3:
-                diaString = 'Miércoles';
-                break;
-            case 4:
-                diaString = 'Jueves';
-                break;
-            case 5:
-                diaString = 'Viernes';
-                break;
-            case 6:
-                diaString = 'Sábado';
-                break;
-            default:
-                salida = "Hay algún error al calcular el día";
+        diaString = "Ha ocurrido algún error al calcular el día";
+        if (dia >= 0 && dia < 7){
+            diaString = 'Hoy es ' + dias[dia];
         }
-        salida.textContent = 'Hoy es ' + diaString;
+        salida.textContent = diaString;
     }
 
     function esFinde(){
