@@ -7,7 +7,7 @@
  */
 
 (function (){
-
+    'use strict'; //Nos muestra más errores y warning
     let nodos = document.getElementById("lista").children;
     let contador = 0;
     
@@ -24,5 +24,5 @@
         node.textContent = "Nuevo elemento " + (++contador);
         return node;
     }
-
+    
 })();
