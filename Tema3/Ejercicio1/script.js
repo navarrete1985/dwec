@@ -32,3 +32,12 @@
     }
 
 })();
+
+/*
+- Evitar que se añadan canciones repetidas o sin texto
+- Poner un botón para ordenar la lista de canciones alfabéticamente
+- Añadir un botón para buscar una canción por su nombre completo o parte de él
+- Añadir un botón para eliminar canciones (pedir la canción en el campo
+    de texto y luego eliminarla y/o poner un botón eliminar junto a cada canción)
+    Pedir confirmación
+*/ 
