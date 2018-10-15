@@ -28,11 +28,12 @@
     });
 
     btnBuscar.addEventListener('click', function(){
+        limpiar();
         console.log('entro en buscar');
         if (inputBuscar.value.trim() !== '') {
             let nodos = lista.childNodes;
             for (let item of nodos){
-                if (item.nodeName === 'LI' && item.firstChild.textContent !== inputBuscar.value){
+                if (item.nodeName === 'LI' && !item.firstChild.textContent.includes(inputBuscar.value)){
                     item.style.display = 'none';
                 }
             }
@@ -40,12 +41,7 @@
     });
 
     btnLimpiar.addEventListener('click', function(){
-        let nodos = lista.childNodes;
-            for (let item of nodos){
-                if (item.nodeName === 'LI'){
-                    item.style.display = 'list-item';
-                }
-            }
+        limpiar();
     });
     
     function addCancion(nombreCancion, nodo){
@@ -70,6 +66,14 @@
         Array.from(lista.getElementsByTagName("LI"))
             .sort((a, b) => a.textContent.localeCompare(b.textContent))
             .forEach(li => lista.appendChild(li));
+    }
+
+    function limpiar() {
+        for (let item of lista.childNodes){
+            if (item.nodeName === 'LI'){
+                item.style.display = 'list-item';
+            }
+        }
     }
 
 })();
