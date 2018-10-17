@@ -1,0 +1,14 @@
+h2 {
+    background-image: url('./plus.svg');
+    background-position: center left;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+.cerrado {
+    display: none;
+}
+
+.menos {
+    background-image: url('./minus.svg');
+}
