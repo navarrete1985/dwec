@@ -1,0 +1,24 @@
+.body {
+    font-size: 62.5%;
+}
+
+.imgen {
+    width: 60vw;
+    margin: auto;
+    background-image: url(../EjercicioFAQ2/images/cavalleria.jpg);
+    background-color: aquamarine;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.imgen::after {
+    content: '';
+    padding-bottom: 60%;
+    display: block;
+}
+
+p {
+    font-size: 1.5625vw;
+    text-align: center;
+}
