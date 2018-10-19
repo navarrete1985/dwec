@@ -5,7 +5,7 @@
 .imgen {
     width: 60vw;
     margin: auto;
-    background-image: url(../EjercicioFAQ2/images/cavalleria.jpg);
+    background-image: url(./images/cala_menuda.jpg);
     background-color: aquamarine;
     background-repeat: no-repeat;
     background-position: center;
@@ -21,4 +21,12 @@
 p {
     font-size: 1.5625vw;
     text-align: center;
+}
+
+#buttons {
+    text-align: center;
+}
+
+button {
+    margin: 0 30px;
 }

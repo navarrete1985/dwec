@@ -17,11 +17,77 @@
             'Playa de San Furtadera',
             'Playa de Valdevaqueros',
             'Plata de Cavallería',
-            'Plata de Taganana'
+            'Playa de Taganana'
         )
     };
+    // let slider = document.getElementById("slider");
 
-    let slider = (function)
+    // let clousure = (function(){
+    //     let posicion = 1;
+        
+    //     return function() {
+    //         let backgroundUrl = imagenes.imagenes[posicion];
+    //         slider.style.backgroundImage = "url('./images/" + backgroundUrl + "')";
+    //         slider.nextElementSibling.textContent = imagenes.descripcion[posicion]
+
+    //         posicion = (posicion === imagenes.imagenes.length -1) ? posicion = 0 : posicion += 1;
+    //     }
+        
+    // })();
+
+
+    // setInterval(clousure, 2000);
+
+    let clousure = (function (){
+
+        let posicion = 1;
+        let slider = document.getElementById("slider");
+        let timeout = 2000;
+        let start = false;
+        let interval = null;
+
+        let timmer = function(){
+            let backgroundUrl = imagenes.imagenes[posicion];
+            slider.style.backgroundImage = "url('./images/" + backgroundUrl + "')";
+            slider.nextElementSibling.textContent = imagenes.descripcion[posicion]
+            posicion = (posicion === imagenes.imagenes.length -1) ? posicion = 0 : posicion += 1;
+        }
+        
+        return {
+            start: function(){
+                if (!start){
+                    interval = window.setInterval(timmer, timeout);
+                    start = !start;
+                }
+            },
+            stop: function(){
+                if (start){
+                    window.clearInterval(interval);
+                    start = !start;
+                }
+            },
+            setTimeout: function(time){
+                if (Number.isInteger(timeout)){
+                    timeout = time*1000;
+                    this.stop();
+                    this.start();
+                }
+            }
+        }
+    })();
+
+    document.getElementById("buttons").addEventListener('click', function(event){
+        if (event.target.classList[0] === 'start'){
+            clousure.start();
+        }else if (event.target.classList[0] === 'start'){
+            clousure.stop();
+        }
+    });
+    let lista = document.getElementById('seconds');
+    lista.addEventListener('change', function(event){
+        let time = parseInt(lista.value);
+        clousure.setTimeout(time);
+    });
 
 })();
 
