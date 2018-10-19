@@ -79,7 +79,7 @@
     document.getElementById("buttons").addEventListener('click', function(event){
         if (event.target.classList[0] === 'start'){
             clousure.start();
-        }else if (event.target.classList[0] === 'start'){
+        }else if (event.target.classList[0] === 'pause'){
             clousure.stop();
         }
     });
