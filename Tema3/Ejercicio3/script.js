@@ -16,6 +16,7 @@
             'Playa de las Teresitas',
             'Playa de San Furtadera',
             'Playa de Valdevaqueros',
+            
             'Plata de Cavallería',
             'Playa de Taganana'
         )
