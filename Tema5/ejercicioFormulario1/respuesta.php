@@ -7,8 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">
-        
-    </form>
+    <h1>Validación realizada con éxito! ;)</h1>
 </body>
 </html>

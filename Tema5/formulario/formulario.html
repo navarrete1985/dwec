@@ -8,21 +8,14 @@
 </head>
 
 <body>
-	<form action="www.google.es" id="formulario" method="post">
-	<label>nombre</label>
-	<input type="text" name="nombre" id="nombre" value="" />
-	<br>
-	<label>apellido</label>
-	<input type="text" name="apellido" id="apellido" value="" />
-	<br>
-	<label>email</label>
-	<input type="text" name="email" id="email" value="" />
-	<br>
-	<input type="submit" name="enviar">
-	
-
+	<form action="./pagina.php" id="formulario" method="GET">
+		<input type="text" name="nombre" id="nombre" value="" placeholder="Introduce Nombre" />
+		<br><br>
+		<input type="text" name="apellido" id="apellido" value="" placeholder="Introduce Apellido" />
+		<br><br>
+		<input type="text" name="email" id="email" value="" placeholder="Introduce email"/>
+		<br><br>
+		<input type="submit" name="enviar">
 	</form>
-
-
 </body>
 </html>
