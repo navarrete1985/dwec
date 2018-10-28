@@ -60,6 +60,10 @@ opción no se verifique no se habilitará el botón de envío.
         let isValidOp = (inputOp.value == number1+number2 ? true : false);
         isValidOp ? removeErrorToElement(inputOp) : addErrorToElement(inputOp, 'Operación matemática de verificación erronea');
 
+        if (isValidage && isValidEmail && isValidGenre && isValidName && isValidOp && isValidPass){
+            form.submit();
+        }
+
     }
 
     function checkReset(event) {
@@ -72,7 +76,6 @@ opción no se verifique no se habilitará el botón de envío.
 
     function checkName(node, minSize, maxSize) {
         let result = true;
-        /*/^([a-zA-Z0-9\s]{" + minSize + "," + maxSize + "})$/*/ 
         let regex = new RegExp("^([a-zA-Z0-9\\s]{" + minSize + "," + maxSize + "})$");
         let cadena = node.value.trim();
         if (!regex.test(cadena)){
@@ -93,7 +96,7 @@ opción no se verifique no se habilitará el botón de envío.
         }else {
             removeErrorToElement(node);
         }
-        return ;
+        return result;
     }
 
     function checkPassword(node) {
@@ -117,6 +120,7 @@ opción no se verifique no se habilitará el botón de envío.
         }else{
             removeErrorToElement(rpass);
         }
+        return result;
     }
 
     function checkBoxCheck(nodes) {
