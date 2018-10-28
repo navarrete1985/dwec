@@ -1,0 +1,60 @@
+.container {
+    position: relative;
+    width: 40%;
+    margin: auto;
+    padding: 40px;
+    background-color: rgba(119, 136, 153, 0.589);
+    border-radius: 1em;
+}
+
+h2 {
+    text-align: center;
+}
+
+input[type='text'], input[type='password'], input[type='date'], input[type='file'], input[type='email'], input[type='number'] {
+    margin: 8px auto;
+    padding: 4px;
+}
+
+label {
+    position: relative;
+}
+
+label.sexo {
+    margin-top: 8px;
+    float: left;
+}
+
+div.sexo {
+    margin-top: 8px;
+}
+
+input[type='text'], input[type='password'], input[type='email'], input[type='number'] {
+    width: 100%;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 16px;
+}
+
+input[type='submit'], input[type='reset'] {
+    margin-right: 16px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background-color: white;
+    border: none;
+}
+
+input[type='submit']:hover, input[type='reset']:hover {
+    background-color: lightgrey;
+}
+
+input[type='submit']:focus, input[type='reset']:focus {
+    background-color: lightgrey;
+}
+
+.error {
+    color: crimson;
+    margin-left: 8px;
+}

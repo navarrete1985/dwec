@@ -9,7 +9,7 @@
 		var email = document.getElementById("email").value;
 		 
 		let salida = "";
-	 	if(nombre.trim().length < 3 || nombre.trim().length > 10 || apellido.trim().length < 3 && apellido.trim().length > 10) {
+	 	if(nombre.trim().length < 3 || nombre.trim().length > 10 || apellido.trim().length < 3 || apellido.trim().length > 10) {
 			salida += '- Nombre/Apellidos requerido entre 3-10 caracteres\n\n';
 	 	}
 
@@ -25,7 +25,7 @@
 
 		function validar_email( email ) {
 			var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-			return regex.test(email) ? true : false;
+			return regex.test(email);
 		}
 	}
 })();	

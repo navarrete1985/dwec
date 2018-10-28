@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Formulario</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <form action="respuesta.php" method="POST" enctype="multipart/form-data" id="form">
-        <input type="text" name="nombre" id="nombre" placeholder="Introduzca nombre">
-        <input type="password" name="pswd" id="pswd" placeholder="Introduzca contraseña">
-        <input type="password" name="rpswd" id="rpswd" placeholder="Repita contraseña"><br>
-        <input type="radio" name="genero" value="masculino" >Masculino<br>
-        <input type="radio" name="genero" value="femenino" >Femenino<br>
-        <input type="date" name="nacimiento" id="nacimiento">
-        <input type="text" name="ciudad" id="ciudad" placeholder="Introduzca nombre de ciudad">
-        <input type="file" name="foto" id="foto">
-        <label for="verif"></label>
-        <input type="text" name="verif" id="verif">
-        <input type="submit">
-        <input type="reset">
-    </form>
+    <div class="container">
+        <form action="respuesta.php" method="POST" enctype="multipart/form-data" id="form">
+            <h2>Fromulario de registro</h1>
+            <input type="text" name="nombre" id="nombre" placeholder="Introduzca nombre" autofocus><br>
+            <input type="password" name="pswd" id="pswd" placeholder="Introduzca contraseña" ><br>
+            <input type="password" name="rpswd" id="rpswd" placeholder="Repita contraseña" ><br>
+            <input type="email" name="email" id="email" placeholder="Introduzca email">
+            <div class="sexo">
+                <label class="sexo" for="genero">Sexo</label>
+                <input type="radio" name="genero" value="masculino" >Masculino<br>
+                <input type="radio" name="genero" value="femenino" >Femenino<br>
+            </div>
+            <label for="nacimiento">Fecha de Nacimiento</label>
+            <input type="date" name="nacimiento" id="nacimiento"><br>
+            <input type="text" name="ciudad" id="ciudad" placeholder="Introduzca nombre de ciudad"><br>
+            <input type="file" name="foto" id="foto" >
+            <div><label for="verify" id='label'>Realice la siguiente cuenta matemática </label></div>
+            <input type="number" name="verify" id="verify" placeholder="Introduce resultado de la operación" >
+            <br><input type="checkbox" name="condiciones" id="condiciones">Acepto las condiciones
+            <div class="btn">
+                <input type="submit" value="Crear cuenta" disabled>
+                <input type="reset">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
