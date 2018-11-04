@@ -1,0 +1,64 @@
+@font-face {
+    font-family: roboto-ligth;
+    src: url(./Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: roboto-medium;
+    src: url(./Roboto-Medium.ttf);
+}
+
+input[type="radio"] {
+    -moz-appearance: checkbox;
+    -webkit-appearance: checkbox;
+    -ms-appearance: checkbox;
+}
+
+.hidden {
+    display: none;
+}
+
+#timer {
+    display: inline-block;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    font-family: roboto-ligth;
+    
+}
+
+p {
+    font-family: roboto-medium;
+}
+
+h1 {
+    font-family: roboto-medium;
+    text-align: center;
+    color: #5F5F5F;
+}
+
+li, input, select {
+    font-family: roboto-ligth;
+    font-size: 1em;
+}
+
+.buttons {
+    text-align: center;
+    margin: 20px auto;
+}
+
+input[type="reset"], input[type="submit"] {
+    margin: 16px;
+}
+
+textarea {
+    resize: none;
+}
+
+.wordCount {
+    display: inline-block;
+}
+
+div p {
+    display: inline;
+}

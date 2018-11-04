@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div id="timer">Tiempo transcurrido: <span id="minutos">00</span>:<span id="segundos">00</span> </div>
+    <h1>Test JavaScript</h1>
+    <form action="#" method="POST" id="form">
+        <ol>
+            <li>
+                <p>¿Cómo se puede especificar que va a ser lanzada la pila de llamadas cuando se lanza un evento en javascript?</p>
+                <div>
+                    <label><input type="checkbox" name="pr1" value="1">De dentro a fuera.</label><br>
+                    <label><input type="checkbox" name="pr1" value="2">De fuera a dentro.</label><br>
+                    <label><input type="checkbox" name="pr1" value="3">No se puede especificar el recorrido.</label><br>
+                    <label><input type="checkbox" name="pr1" value="4">Sólamente se lanza el evento en el nodo que lo tiene asignado.</label><br>
+                </div>
+            </li>
+            <li>
+                <p>¿Que visibilidad tiene las variable declaradas como let?</p>
+                <div>
+                    <label><input type="radio" name="pr2" value="1">Global.</label><br>
+                    <label><input type="radio" name="pr2" value="2">Sólamente dentro de la función en la que son declaradas.</label><br>
+                    <label><input type="radio" name="pr2" value="3">Tienen visibilidad entre las llaves "{" del trozo de código donde fueron declaradas.</label><br>
+                    <input type="radio" name="pr2" class="hidden" value="-1" checked>
+                </div>
+            </li>
+            <li>
+                <p>¿Que propiedad tiene seguro siempre el elemento que ha desencadenado un evento?</p>
+                <div>
+                    <select name="pr3" id="pr3">
+                        <option value="" selected disabled hidden>Elige una opción</option>
+                        <option value="target">Tatget</option>
+                        <option value="currentTarget">CurrentTarget</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <p>¿Cuál es la salida a esta operación i = "3" + 5;?</p>
+                <input type="text" name="pr4" id="pr4" placeholder="Introduce la respuesta"><br>
+            </li>
+            <li>
+                <p>¿En qué etiqueta se añade el enlace a nuestro archivo javaScript?</p>
+                <div>
+                    <label><input type="radio" name="pr5" value="1">&ltlink&gt</label><br>
+                    <label><input type="radio" name="pr5" value="2">&ltscript&gt</label><br>
+                    <input type="radio" name="pr5" class="hidden" value="-1" checked>
+                </div>
+            </li>
+            <li>
+                <p>¿Qué debemos de poner detrás de la etiqueta que define nuestro js para que sea cargado al final de nuestro código HTML?</p>
+                <div>
+                    <label><input type="radio" name="pr6" value="1">Defer.</label><br>
+                    <label><input type="radio" name="pr6" value="2">Retard.</label><br>
+                    <label><input type="radio" name="pr6" value="3">Nada, nuestro script será ejecutado siempre lo último sin necesidad de especificación alguna.</label><br>
+                    <input type="radio" name="pr6" class="hidden" value="-1" checked>
+                </div>
+            </li>
+            <li>
+                <p>¿Qué son las clousures?</p>
+                <div>
+                    <label><input type="radio" name="pr7" value="1">Funciones anónimas.</label><br>
+                    <label><input type="radio" name="pr7" value="2">Funciones con las que encapsulamos variables para que puedan ser obtenidas siempre desde la misma clousure.</label><br>
+                    <label><input type="radio" name="pr7" value="3">Son objetos de javaScript.</label><br>
+                    <input type="radio" name="pr7" class="hidden" value="-1" checked>
+                </div>
+            </li>
+            <li>
+                <p>¿Al añadir un evento como document.getElementByIf('id').addEventListener('click', nombreDeFuncion(event)); que estaría sucediendo?</p>
+                <div>
+                    <label><input type="radio" name="pr8" value="1">Que llamamos a la función y le pasamos el evento como parámetro.</label><br>
+                    <label><input type="radio" name="pr8" value="2">Que ejecutamos la función en cuanto estemos asociando el evento.</label><br>
+                    <label><input type="radio" name="pr8" value="3">Ambas respuestas son correctas.</label><br>
+                    <input type="radio" name="pr8" class="hidden" value="-1" checked>
+                </div>
+            </li>
+            <li>
+                <p>¿Para qué sirve el patrón módulo?</p>
+                <div>
+                    <label><input type="radio" name="pr9" value="1">Forma de encapsular una función.</label><br>
+                    <label><input type="radio" name="pr9" value="2">Forma de hacer nuestro código más legible y comprensible.</label><br>
+                    <label><input type="radio" name="pr9" value="3">Es la forma para que nuestros script se ejecuten cuando los asociamos en nuestro HTML.</label><br>
+                    <input type="radio" name="pr9" class="hidden" value="-1" checked>
+                </div>
+            </li>
+            <li>
+                <p>¿Cuál es tu opinión sobre el lenguaje de programación JavaScript?</p>
+                <div>
+                    <textarea name="" id="pr10" cols="65" rows="5" maxlength="100"></textarea>
+                    <div class="wordCount"><span>0</span>/100</div>
+                </div>                
+            </li>
+        </ol>
+        <div class="buttons">
+            <input type="reset" value="Borrar Respuestas">
+            <input type="submit" value="Corrección">
+        </div>
+    </form>
+</body>
+</html>
