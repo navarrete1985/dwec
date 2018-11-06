@@ -62,3 +62,24 @@ textarea {
 div p {
     display: inline;
 }
+
+.resultado {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.resultado p {
+    display: block;
+    font-family: roboto-ligth;
+    font-size: 1em;
+}
+
+.resultado p.cabecera {
+    text-align: center;
+    font-size: 1.26em;
+    margin-bottom: 0px;
+}
+
+.resultado p span {
+    font-weight: 600;
+}

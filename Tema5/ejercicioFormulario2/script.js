@@ -30,6 +30,8 @@ Corrección se deshabilitará
         'pr8': new Array("2"),
         'pr9': new Array("1")
     };
+
+    let correcciones = 0;
     let correctas = 0;
     let fallidas = 0;
     let nc = 0;
@@ -76,6 +78,9 @@ Corrección se deshabilitará
                 segundos = 0;
                 start = false;
                 this.start();
+            }, 
+            getTime: function() {
+                return minutos + ':' + segundos;
             }
         }
     })();
@@ -96,10 +101,7 @@ Corrección se deshabilitará
         }
     });
 
-    document.getElementById('form').addEventListener('reset', function(e){
-        e.preventDefault();
-        timmer.reset();
-    });
+    document.getElementById('form').addEventListener('reset', resetFormulario);
 
     document.getElementById('form').addEventListener('submit', correccion);
 
@@ -123,9 +125,20 @@ Corrección se deshabilitará
                 break;
             }
         }
-        console.log('El resultado del test es \nTotal de respuestas correctas: ' + correctas
-                + '\nTotal de respuestas erroneas: ' + fallidas 
-                + '\nTotal de respuestas no marcadas: ' + nc);
+        cargarResultado();
+    }
+
+    function resetFormulario(event) {
+        event.target.preventDefault();
+        if (confirm("¿Seguro que quiere resetear el test?")) {
+            timmer.reset();
+            resetResultado();
+            correcciones = 0;
+            event.target.reset();
+            document.querySelector('div.resultado').classList.add('hidden');
+            document.getElementById('form').querySelector('input[type="submit"]').value = 'Corrección';
+        }
+        
     }
 
     function validarCheckbox(pregunta, items) {
@@ -168,6 +181,23 @@ Corrección se deshabilitará
         }
     }
 
+    function cargarResultado() {
+        let nodos = document.querySelectorAll('div.resultado p span');
+        let resultado = new Array(correctas+fallidas, ((correctas/9)*100).toFixed(2), correctas, fallidas, timmer.getTime());
+        for (let i=0; i<nodos.length; i++) {
+            nodos[i].textContent = resultado[i];
+        }
+        let contenedor = document.querySelector('div.resultado');
+        contenedor.classList.remove('hidden');
+        if (correcciones === 0) {
+            document.getElementById('form').querySelector('input[type="submit"]').value = 'Reintentar';
+            correcciones++;
+        }
+        if (correctas === 9) {
+            document.getElementById('form').querySelector('input[type="submit"]').disabled = true;
+        }
+    }
+
     function resetResultado() {
         correctas = 0;
         fallidas = 0;
@@ -177,3 +207,5 @@ Corrección se deshabilitará
     timmer.start();
 
 })();
+
+
