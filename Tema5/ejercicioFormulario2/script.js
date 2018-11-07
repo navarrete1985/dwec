@@ -129,14 +129,15 @@ Corrección se deshabilitará
     }
 
     function resetFormulario(event) {
-        event.target.preventDefault();
         if (confirm("¿Seguro que quiere resetear el test?")) {
             timmer.reset();
             resetResultado();
             correcciones = 0;
-            event.target.reset();
+            document.getElementById('form').querySelector('input[type="submit"]').disabled = false;
             document.querySelector('div.resultado').classList.add('hidden');
             document.getElementById('form').querySelector('input[type="submit"]').value = 'Corrección';
+        } else {
+            event.preventDefault();
         }
         
     }
