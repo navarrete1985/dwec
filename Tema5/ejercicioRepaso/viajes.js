@@ -21,11 +21,11 @@
         let elemento = event.target.nextElementSibling.classList.toggle('hidden');
     })
 
-    document.querySelectorAll('div.tour input[type="number"]').forEach(item=> {
+    document.querySelectorAll('div.tour input[type="number"]').forEach(item => {
         item.addEventListener('change', calcularPrecio);
     });
 
-    document.querySelectorAll('div.tour button.book').forEach(item=>{
+    document.querySelectorAll('div.tour button.book').forEach(item => {
         item.addEventListener('click', accionReserva);
     });
 
