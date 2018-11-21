@@ -36,8 +36,5 @@ Ejercicio1:  añadir  una  serie  de  métodosal  objetoArray:
     console.log('El resultado al limpiar el vector es --> ' + vector);
     vector.push('Un elemento');
     console.log('El resultado despues de add un elemento al vector limpio es  --> ' + vector);
-
     
-    
-
 })();

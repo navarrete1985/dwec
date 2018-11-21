@@ -18,7 +18,7 @@
 (function() {
 
     document.querySelector("a.ver-fotos").addEventListener('click', function(event){
-        let elemento = event.target.nextElementSibling.classList.toggle('hidden');
+        event.target.nextElementSibling.classList.toggle('hidden');
     })
 
     document.querySelectorAll('div.tour input[type="number"]').forEach(item => {
