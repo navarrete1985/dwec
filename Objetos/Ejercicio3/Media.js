@@ -131,4 +131,78 @@ class Cd extends Media {
         return this._canciones;
     }
 
+    /**
+     * @returns {String[]} Devolvemos un nuevo array con la lista de las canciones desordenada
+     */
+    barajar() {
+        let copiaCanciones = this._canciones.slice();
+        for (var i = copiaCanciones.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = copiaCanciones[i];
+            copiaCanciones[i] = copiaCanciones[j];
+            copiaCanciones[j] = temp;
+        }
+        return copiaCanciones;
+    }
+
+}
+
+class Catalogo {
+
+    constructor(nombre) {
+        this._nombre = nombre;
+        this._catalogo = {
+            libros: new Array(),
+            peliculas: new Array(),
+            cd: new Array()
+        };
+    }
+
+    get nombre() {
+        return this._nombre;
+    }
+
+    /**
+     * 
+     * @param {Media} media Objeto media para incluirlo en nuestro catálogo
+     * @returns {Int} Longitud de lista de medios donde se ha incluido, -1 en caso de error
+     */
+    addItem(media) {
+        let result = -1;
+        if (media instanceof Media) {
+            switch (media.constructor) {
+                case Cd:
+                    result = this._catalogo.cd.push(media);
+                break;
+                case Libros:
+                    result = this._catalogo.libros.push(media);
+                break;
+                case Pelicula:
+                    result = this._catalogo.peliculas.push(media);
+                break;
+            }    
+        }
+        return result;
+    }
+
+    /**
+     * 
+     * @param {int} type Tipo de catalogo a retornar 1-> Cd 2-> Libros 3-> Peliculas
+     * @returns {Media[]} Array de Medias con los diferentes elementos almacenados
+     */
+    getCatalogo(type) {
+        let result = false;
+        switch (type) {
+            case 1:
+                result = this._catalogo.cd;
+            break;
+            case 2:
+                result = this._catalogo.libros;
+            break;
+            case 3:
+                result = this._catalogo.peliculas;
+            break;
+        }
+        return result;
+    }
 }
