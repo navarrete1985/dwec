@@ -1,4 +1,4 @@
-let libro = new Libros('Los pilares de la tierra', 'Ken Follett', 1068);
+let libro = new Libro('Los pilares de la tierra', 'Ken Follett', 1068);
 let pelicula = new Pelicula('Pulp Fiction', 'Quentin Tarantino', 178);
 let cd = new Cd('Nevermind', 'Nirvana', ['Una', 'Dos', 'Tres', 'Cuatro']);
 
@@ -23,6 +23,7 @@ let cd = new Cd('Nevermind', 'Nirvana', ['Una', 'Dos', 'Tres', 'Cuatro']);
 let catalogo = new Catalogo();
 console.log(catalogo.addItem(libro));
 console.log(catalogo.addItem(new Array()));
-console.log(catalogo.getCatalogo(1));
-console.log(catalogo.getCatalogo(2));
-console.log(catalogo.getCatalogo(3));
+console.log(catalogo.getCatalogo(Media.TYPE_CD));
+console.log(catalogo.getCatalogo(Media.TYPE_LIBRO));
+console.log(catalogo.getCatalogo(Media.TYPE_PELICULA));
+console.log(catalogo.getCatalogo('asdhkajshdkj'));

@@ -20,6 +20,10 @@ Estas tres subclases tienen las siguientes propiedades y métodos:
         Crea una clase llamada Catálogo que mantiene todos los items Media de la biblioteca.
 */
 
+const TYPE_PELICULA = 'pelicula',
+      TYPE_LIBRO    = 'libro',
+      TYPE_CD       = 'cd'
+
 class Media {
 
     constructor(titulo = '', prestado = false, valoraciones = new Array()) {
@@ -38,6 +42,18 @@ class Media {
 
     get valoraciones() {
         return this._valoraciones;
+    }
+
+    static get TYPE_PELICULA() {
+        return TYPE_PELICULA;
+    }
+
+    static get TYPE_LIBRO() {
+        return TYPE_LIBRO;
+    };
+
+    static get TYPE_CD() {
+        return TYPE_CD;
     }
 
     getMediaValoraciones() {
@@ -61,7 +77,7 @@ class Media {
 
 }
 
-class Libros extends Media {
+class Libro extends Media {
 
     /**
      * 
@@ -152,8 +168,8 @@ class Catalogo {
     constructor(nombre) {
         this._nombre = nombre;
         this._catalogo = {
-            libros: new Array(),
-            peliculas: new Array(),
+            libro: new Array(),
+            pelicula: new Array(),
             cd: new Array()
         };
     }
@@ -170,39 +186,17 @@ class Catalogo {
     addItem(media) {
         let result = -1;
         if (media instanceof Media) {
-            switch (media.constructor) {
-                case Cd:
-                    result = this._catalogo.cd.push(media);
-                break;
-                case Libros:
-                    result = this._catalogo.libros.push(media);
-                break;
-                case Pelicula:
-                    result = this._catalogo.peliculas.push(media);
-                break;
-            }    
+            return this._catalogo[media.constructor.name.toLowerCase()].push(media);
         }
         return result;
     }
 
     /**
      * 
-     * @param {int} type Tipo de catalogo a retornar 1-> Cd 2-> Libros 3-> Peliculas
+     * @param {int} type Tipo de catalogo a retornar, obtener con las constantes de clase de media, que son Media.LIBRO, Media.CD, Media.PELICULA
      * @returns {Media[]} Array de Medias con los diferentes elementos almacenados
      */
     getCatalogo(type) {
-        let result = false;
-        switch (type) {
-            case 1:
-                result = this._catalogo.cd;
-            break;
-            case 2:
-                result = this._catalogo.libros;
-            break;
-            case 3:
-                result = this._catalogo.peliculas;
-            break;
-        }
-        return result;
+        return this._catalogo[type];
     }
 }
