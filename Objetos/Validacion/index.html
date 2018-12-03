@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./Validacion.js" defer></script>
+    <script src="./form.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="POST" id="formId">
+        <input type="password"placeholder="Introduce contraseña"><br>
+        <input type="text" placeholder="Introduce nombre"><br>
+        <input type="email" placeholder="Introduce email"><br>
+        <label for="checkbox">Un valor</label>
+        <input type="checkbox" value="unValor" id="checkbox"><br>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" requireOne="true" value="male"><br>
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female" requireOne="true"><br>
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="gender" value="other" requireOne="true"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
