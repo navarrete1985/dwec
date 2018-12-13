@@ -12,11 +12,13 @@ $( function() {
 });
 
 $( function() {
-    var tabs = $( "#tabs2" ).tabs();
-    tabs.find( ".ui-tabs-nav" ).sortable({
-      axis: "x",
-      stop: function() {
-        tabs.tabs( "refresh" );
-      }
-    });
-  } );
+  var tabs = $( "#tabs2" ).tabs();
+  tabs.find( ".ui-tabs-nav" ).sortable({
+    axis: "x",
+    stop: function() {
+      tabs.tabs( "refresh" );
+    }
+  });
+} );
+
+  
