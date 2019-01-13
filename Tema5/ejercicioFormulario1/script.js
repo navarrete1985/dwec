@@ -155,9 +155,10 @@ opción no se verifique no se habilitará el botón de envío.
     }
 
     function removeErrorToElement(node) {
-        previousNode = node.previousSibling;
+        previousNode = node.previousElementSibling;
         if (previousNode !== undefined && previousNode.tagName === 'DIV' && previousNode.classList.contains('error')){
-            form.removeChild(previousNode);
+            // form.removeChild(previousNode);
+            previousNode.remove();
         }
     }
 

@@ -91,7 +91,7 @@ class Validacion {
         let result = 0;
         inputs.forEach(element => {
             let checked = 0;
-            let radios = this._form.querySelectorAll(`input[type=radio][name=${element}`);
+            let radios = this._form.querySelectorAll(`input[type=radio][name=${element}]`);
             Array.from(radios, item => {
                 checked += (item.checked) ? 1 : 0;
             })

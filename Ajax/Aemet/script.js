@@ -1,6 +1,6 @@
 (function() {
-
-    var url = "https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/18087/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWNob19wZW5hQGhvdG1haWwuY29tIiwianRpIjoiZjBlNjdhNmEtOWQzMi00NTkzLWFmZTktYTBiMjVhYTY5YzkwIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE1NDY5MzY5NzYsInVzZXJJZCI6ImYwZTY3YTZhLTlkMzItNDU5My1hZmU5LWEwYjI1YWE2OWM5MCIsInJvbGUiOiIifQ.EgyVfXO-0_iPv9e5nRNvFQKC2FkltEe1vFz9rdzsV8I";
+    let key = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWNob19wZW5hQGhvdG1haWwuY29tIiwianRpIjoiZjBlNjdhNmEtOWQzMi00NTkzLWFmZTktYTBiMjVhYTY5YzkwIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE1NDY5MzY5NzYsInVzZXJJZCI6ImYwZTY3YTZhLTlkMzItNDU5My1hZmU5LWEwYjI1YWE2OWM5MCIsInJvbGUiOiIifQ.EgyVfXO-0_iPv9e5nRNvFQKC2FkltEe1vFz9rdzsV8I";
+    var url = `https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/18087/?api_key=${key}`;
     var solicitud = new XMLHttpRequest();
     solicitud.open("GET", url);
     solicitud.onload = function() {
@@ -17,16 +17,39 @@
         request.onload = () => {
             if (request.status == 200) {
                 let data = JSON.parse(request.responseText);
-                mostrarDatos(data);
+                pintarDatos(data);
             }
         } 
         request.send(null);
     }
 
-    function mostrarDatos(data) {
-        console.log(data);
+    function pintarDatos(data) {
+        data.forEach(element => {
+            element.prediccion.dia.forEach((item, index) => {
+                createRow(item.fecha, item.probPrecipitacion[0].value, 
+                    item.humedadRelativa, item.viento[0].velocidad, item.temperatura,
+                    item.sensTermica)
+            })
+        });
     }
 
+    function createRow(dia, probLluvia, humRel, viento, temp, sensTer) {
+        $('table.table tbody').append(
+            `<tr>
+                <th scope="row">${dia}</th> 
+                <td>${probLluvia}%</td>
+                <td>${humRel.maxima}/${humRel.minima} %</td>
+                <td>${viento} km/h</td>
+                <td>${temp.maxima}ºC - ${temp.minima}ºC</td>
+                <td>${sensTer.maxima}ºC - ${sensTer.minima}ºC</td>
+            </tr>`
+        );
+    }
+
+    function getDay(index) {
+        let dia = '';
+        
+    }
 
 // function actualizaVentas(respuesta) {
 //     var divVentas = document.getElementById("ventas");

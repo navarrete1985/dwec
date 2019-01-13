@@ -10,15 +10,13 @@ $(function() {
     $("form").submit(event => {
         event.preventDefault();
         if (checkMail()) {
-            $("form").submit( function() {
-                return false;
-            });
+            $("form")[0].submit();
         }
     });
     
     function checkMail() {
         clearError($('#groupEmail .label.error'));
-        if(!isValidEmail() || !isSameEmail($('#inputEmail1'), $('#inputEmail')) {
+        if(!isValidEmail() || !isSameEmail($('#inputEmail'), $('#inputEmail2'))) {
             return false;
         }
         return true;
@@ -26,7 +24,7 @@ $(function() {
     
     function isValidEmail() {
         var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        let result = regex.test($('#inputEmail')) && regex.test($('#inputEmail2'));
+        let result = regex.test($('#inputEmail').val()) && regex.test($('#inputEmail2').val());
         if (!result) {
             error($('#groupEmail'), 'El formato de los correos no es válido, ejemplo: email@email.com');
         }
@@ -40,7 +38,7 @@ $(function() {
         }
         return result;
     }
-
+    
     function error(group, error) {
         group.append('<span class="label error label-important">' + error + '</span>');
     }

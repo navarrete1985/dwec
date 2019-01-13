@@ -9,7 +9,7 @@
 
         if(cadena.length <= 1){
             result = 'Introduzca una cadena de más de 1 caracter';
-        }else if (cadena == entrada){
+        }else if (cadena == entradaReverse){
             result = 'La cadena introducida es un palíndromo';
         }
 
