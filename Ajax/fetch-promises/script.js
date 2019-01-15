@@ -3,18 +3,18 @@
     var url = `https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/18087/?api_key=${key}`;
     
     fetch(url)
-    .then(response => response.json())
-    .then(response => fetch(response.datos))
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(element => {
-            element.prediccion.dia.forEach((item) => {
-                createRow(item.fecha, item.probPrecipitacion[0].value, 
-                    item.humedadRelativa, item.viento[0].velocidad, item.temperatura,
-                    item.sensTermica)
-            })
-        });
-    })
+        .then(response => response.json())
+        .then(response => fetch(response.datos))
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(element => {
+                element.prediccion.dia.forEach((item) => {
+                    createRow(item.fecha, item.probPrecipitacion[0].value, 
+                        item.humedadRelativa, item.viento[0].velocidad, item.temperatura,
+                        item.sensTermica)
+                })
+            });
+        })
 
     function createRow(dia, probLluvia, humRel, viento, temp, sensTer) {
         $('table.table tbody').append(
